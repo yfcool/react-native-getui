@@ -2,7 +2,7 @@ package com.getui.reactnativegetui;
 
 import android.content.Context;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
@@ -79,7 +79,7 @@ public class GetuiModule extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void destroy(){
-        PushManager.getInstance().stopService(mContext);
+        // PushManager.getInstance().stopService(mContext);
     }
 
     /**
@@ -87,7 +87,7 @@ public class GetuiModule extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void stop(){
-        PushManager.getInstance().stopService(mContext);
+        // PushManager.getInstance().stopService(mContext);
     }
 
     /**

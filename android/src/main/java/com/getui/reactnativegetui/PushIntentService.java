@@ -5,7 +5,7 @@ package com.getui.reactnativegetui;
  */
 
 import android.content.Context;
-import android.support.annotation.RequiresPermission;
+import androidx.annotation.RequiresPermission;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.WritableMap;
