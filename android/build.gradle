@@ -34,9 +34,7 @@ android {
         }
 
         manifestPlaceholders = [
-                GETUI_APP_ID    : "",
-                GETUI_APP_KEY   : "",
-                GETUI_APP_SECRET: "",
+                GETUI_APPID    : "",
 
                 MEIZU_APP_ID    : "",
                 MEIZU_APP_KEY   : "",
@@ -67,10 +65,13 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:support-v4:25+"
     implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation 'com.getui:sdk-for-google-play:4.3.5.9'
-    implementation 'com.getui:mzp-for-google-play:1.0.9'
-    implementation 'com.getui:xmp-for-google-play:1.0.6'
-    implementation 'com.getui:hwp-for-google-play:1.0.6'
-    implementation 'com.assist:oppo-for-google-play:1.0.6'
-    implementation 'com.assist:vivo-for-google-play:1.0.4'
+    implementation 'com.getui:gtsdk:3.2.11.0'
+    implementation 'com.getui:gtc:3.1.10.0'
+    implementation 'com.huawei.hms:push:6.5.0.300'
+    implementation 'com.getui.opt:hwp:3.1.0'
+    implementation 'com.getui.opt:xmp:3.2.0'
+    implementation 'com.getui.opt:mzp:3.2.0'
+    implementation 'com.assist-v3:vivo:3.1.0'
+    implementation 'com.assist-v3:oppo:3.1.0'
+    implementation 'com.getui.opt:ups:3.0.3'
 }

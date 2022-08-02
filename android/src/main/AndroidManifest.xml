@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <!-- 支持个推3.0 电子围栏功能 -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- 浮动通知权限 -->
@@ -25,7 +26,7 @@
 
     <permission
         android:name="getui.permission.GetuiService.${applicationId}"
-        android:protectionLevel="normal" >
+        android:protectionLevel="signature" >
     </permission>
 
     <application android:usesCleartextTraffic="true">
@@ -37,9 +38,9 @@
         <!-- 配置SDK核心服务 -->
         <service
             android:name="com.getui.reactnativegetui.DemoPushService"
-            android:exported="true"
+            android:exported="false"
             android:label="PushService"
-            android:process=":pushservice" />
+            android:process=":pushservice"/>
 
         <receiver android:name="com.igexin.sdk.PushReceiver">
             <intent-filter>
@@ -58,17 +59,20 @@
             android:excludeFromRecents="true"
             android:exported="false"
             android:process=":pushservice"
-            android:taskAffinity="com.igexin.sdk.PushActivityTask"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.igexin.sdk.GActivity"
             android:excludeFromRecents="true"
             android:exported="true"
             android:process=":pushservice"
-            android:taskAffinity="com.igexin.sdk.PushActivityTask"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!-- 个推SDK配置结束 -->
 
     </application>
+    <queries>
+        <intent>
+            <action android:name="com.getui.sdk.action" />
+        </intent>
+    </queries>
 
 </manifest>
