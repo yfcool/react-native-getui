@@ -259,7 +259,7 @@ public class GetuiModule extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void setBadge(int value){
-        // Empty
+        PushManager.getInstance().setBadgeNum(mContext, value);
     }
 
     /**
