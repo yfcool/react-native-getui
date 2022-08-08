@@ -71,9 +71,19 @@ public class GetuiModule extends ReactContextBaseJavaModule {
     public static void initPush(Context context){
         mContext = context;
         GetuiLogger.log("initPush, mContext = " + mContext);
+        // PushManager.getInstance().initialize(mContext, DemoPushService.class);
+        // PushManager.getInstance().registerPushIntentService(mContext, PushIntentService.class);
+    }
+    /**
+     * Android react-native 内部初始化
+     */
+    @ReactMethod
+    public void init(){
+        GetuiLogger.log("initPush2 " + mContext);
         PushManager.getInstance().initialize(mContext, DemoPushService.class);
         PushManager.getInstance().registerPushIntentService(mContext, PushIntentService.class);
     }
+
     /**
      * Android 不存在 destroy方法，仅停止推送服务
      */
@@ -263,7 +273,7 @@ public class GetuiModule extends ReactContextBaseJavaModule {
     }
 
     /**
-     * 重置角标值到个推服务器
+     * 重置角标值到个推服务器11
      * Android中无效，仅在iOS有效
      * @param badge
      */
